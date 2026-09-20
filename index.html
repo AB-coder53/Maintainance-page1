@@ -2,11 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AB Collection — We'll Be Back Soon</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <!-- Fonts -->
+    <title>AB Collection — Something New Is Coming</title>
+
+    <!-- ================================
+         GOOGLE FONTS
+    ================================= -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -16,15 +22,34 @@
     >
 
     <style>
+
+        /* =================================
+           AB COLLECTION — BRAND VARIABLES
+        ================================= */
+
         :root {
+
+            /* Primary Brand Colours */
             --black: #0B0B0B;
             --charcoal: #171717;
+
+            /* Light Brand Colours */
             --ivory: #F5F1E8;
             --cream: #FAF8F3;
+
+            /* Accent */
             --champagne: #C8B58A;
+
+            /* Supporting Colours */
             --muted: #9A958B;
             --border: rgba(200, 181, 138, 0.25);
+
         }
+
+
+        /* =================================
+           RESET
+        ================================= */
 
         * {
             margin: 0;
@@ -32,28 +57,50 @@
             box-sizing: border-box;
         }
 
+
         html,
         body {
             width: 100%;
             min-height: 100%;
         }
 
+
         body {
+
             font-family: "Inter", sans-serif;
+
             background: var(--black);
+
             color: var(--ivory);
+
             min-height: 100vh;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             overflow: hidden;
+
+            -webkit-font-smoothing: antialiased;
+
+            text-rendering: optimizeLegibility;
         }
 
-        /* Subtle background texture */
+
+        /* =================================
+           SUBTLE BACKGROUND GLOW
+        ================================= */
+
         body::before {
+
             content: "";
+
             position: fixed;
+
             inset: 0;
+
             pointer-events: none;
 
             background:
@@ -66,84 +113,150 @@
             z-index: 0;
         }
 
-        /* Main layout */
+
+        /* =================================
+           MAIN CONTAINER
+        ================================= */
+
         .maintenance {
+
             position: relative;
+
             z-index: 1;
 
             width: 100%;
+
             min-height: 100vh;
 
             display: flex;
+
             align-items: center;
+
             justify-content: center;
 
-            padding: 32px 22px;
-        }
+            padding: 32px 22px 70px;
 
-        .content {
-            width: 100%;
-            max-width: 620px;
             text-align: center;
         }
 
-        /* Logo */
-        .logo {
-            margin-bottom: 70px;
-        }
 
-        .logo img {
-            width: 155px;
-            max-width: 55vw;
-            height: auto;
-            display: block;
+        /* =================================
+           CONTENT
+        ================================= */
+
+        .content {
+
+            width: 100%;
+
+            max-width: 620px;
+
             margin: 0 auto;
-            object-fit: contain;
         }
 
-        /*
-            If your logo is white and transparent,
-            this works directly.
 
-            If your logo file is dark,
-            remove the filter below.
-        */
-        .logo img {
-            filter: brightness(0) invert(1);
-        }
+        /* =================================
+           AB COLLECTION LOGO
+        ================================= */
 
-        /* Small label */
-        .eyebrow {
-            display: inline-flex;
+        .logo {
+
+            margin-bottom: 70px;
+
+            display: flex;
+
+            justify-content: center;
+
             align-items: center;
+        }
+
+
+        .brand-logo {
+
+            width: 155px;
+
+            height: auto;
+
+            max-width: 55vw;
+
+            display: block;
+
+            object-fit: contain;
+
+            /*
+                ABogo.png is already black
+                on a white background.
+
+                Therefore:
+                NO filter is applied.
+            */
+
+            filter: none;
+
+            image-rendering: auto;
+        }
+
+
+        /* =================================
+           EYEBROW
+        ================================= */
+
+        .eyebrow {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
             gap: 10px;
 
             color: var(--champagne);
 
             font-size: 10px;
+
             font-weight: 600;
+
             letter-spacing: 0.24em;
+
             text-transform: uppercase;
 
             margin-bottom: 24px;
         }
 
+
         .eyebrow::before,
         .eyebrow::after {
+
             content: "";
+
             width: 24px;
+
             height: 1px;
+
             background: var(--champagne);
+
             opacity: 0.65;
         }
 
-        /* Main heading */
+
+        /* =================================
+           MAIN HEADING
+        ================================= */
+
         h1 {
+
             font-family: "Playfair Display", serif;
 
-            font-size: clamp(42px, 8vw, 72px);
+            font-size: clamp(
+                42px,
+                8vw,
+                72px
+            );
+
             line-height: 1.05;
+
             font-weight: 500;
+
             letter-spacing: -0.025em;
 
             color: var(--cream);
@@ -151,26 +264,43 @@
             margin-bottom: 24px;
         }
 
+
         h1 span {
+
             display: block;
+
             color: var(--champagne);
         }
 
-        /* Description */
+
+        /* =================================
+           DESCRIPTION
+        ================================= */
+
         .description {
+
             max-width: 500px;
+
             margin: 0 auto;
 
             color: var(--muted);
 
             font-size: 14px;
+
             line-height: 1.8;
+
             font-weight: 400;
         }
 
-        /* Divider */
+
+        /* =================================
+           DIVIDER
+        ================================= */
+
         .divider {
+
             width: 56px;
+
             height: 1px;
 
             background: var(--champagne);
@@ -180,198 +310,452 @@
             margin: 38px auto;
         }
 
-        /* Status */
+
+        /* =================================
+           STATUS PILL
+        ================================= */
+
         .status {
+
             display: inline-flex;
+
             align-items: center;
+
+            justify-content: center;
+
             gap: 10px;
 
             padding: 11px 18px;
 
             border: 1px solid var(--border);
+
             border-radius: 100px;
 
-            background: rgba(255, 255, 255, 0.025);
+            background: rgba(
+                255,
+                255,
+                255,
+                0.025
+            );
 
             color: #BDB8AD;
 
             font-size: 10px;
+
             font-weight: 500;
+
             letter-spacing: 0.12em;
+
             text-transform: uppercase;
         }
 
+
+        /* =================================
+           STATUS DOT
+        ================================= */
+
         .status-dot {
+
             width: 6px;
+
             height: 6px;
 
+            flex-shrink: 0;
+
             background: var(--champagne);
+
             border-radius: 50%;
 
-            box-shadow: 0 0 0 4px rgba(200, 181, 138, 0.08);
+            box-shadow:
+                0 0 0 4px
+                rgba(
+                    200,
+                    181,
+                    138,
+                    0.08
+                );
 
-            animation: pulse 2s ease-in-out infinite;
+            animation:
+                pulse 2s
+                ease-in-out
+                infinite;
         }
 
+
         @keyframes pulse {
+
             0%,
             100% {
+
                 opacity: 1;
+
                 transform: scale(1);
             }
 
             50% {
+
                 opacity: 0.45;
+
                 transform: scale(0.85);
             }
         }
 
-        /* Footer */
+
+        /* =================================
+           FOOTER
+        ================================= */
+
         .footer {
+
             position: absolute;
 
             bottom: 26px;
+
             left: 0;
+
             right: 0;
+
+            width: 100%;
 
             text-align: center;
 
             color: #66635D;
 
             font-size: 9px;
+
             letter-spacing: 0.16em;
+
             text-transform: uppercase;
+
+            padding: 0 20px;
         }
+
 
         .footer span {
+
             color: var(--champagne);
+
             opacity: 0.7;
+
+            padding: 0 5px;
         }
 
-        /* Mobile */
-        @media (max-width: 600px) {
+
+        /* =================================
+           TABLET
+        ================================= */
+
+        @media (max-width: 768px) {
 
             .maintenance {
-                padding: 28px 20px 70px;
+
+                padding-left: 20px;
+
+                padding-right: 20px;
             }
 
-            .logo {
-                margin-bottom: 55px;
-            }
+            .brand-logo {
 
-            .logo img {
-                width: 135px;
-            }
-
-            .eyebrow {
-                font-size: 9px;
-                letter-spacing: 0.2em;
-            }
-
-            .eyebrow::before,
-            .eyebrow::after {
-                width: 16px;
+                width: 145px;
             }
 
             h1 {
-                font-size: clamp(42px, 12vw, 58px);
+
+                font-size:
+                    clamp(
+                        44px,
+                        10vw,
+                        64px
+                    );
+            }
+        }
+
+
+        /* =================================
+           MOBILE
+        ================================= */
+
+        @media (max-width: 600px) {
+
+            .maintenance {
+
+                padding:
+
+                    28px
+                    20px
+                    70px;
+            }
+
+
+            .logo {
+
+                margin-bottom: 55px;
+            }
+
+
+            .brand-logo {
+
+                width: 135px;
+
+                max-width: 48vw;
+            }
+
+
+            .eyebrow {
+
+                font-size: 9px;
+
+                letter-spacing: 0.20em;
+
+                gap: 8px;
+            }
+
+
+            .eyebrow::before,
+            .eyebrow::after {
+
+                width: 16px;
+            }
+
+
+            h1 {
+
+                font-size:
+                    clamp(
+                        42px,
+                        12vw,
+                        58px
+                    );
+
+                line-height: 1.07;
+
                 margin-bottom: 20px;
             }
 
+
             .description {
+
                 font-size: 13px;
+
                 line-height: 1.75;
+
                 max-width: 330px;
             }
 
+
             .divider {
+
                 margin: 30px auto;
             }
 
+
             .status {
+
                 font-size: 9px;
-                padding: 10px 15px;
+
+                padding:
+                    10px
+                    15px;
+
+                letter-spacing:
+                    0.10em;
             }
 
+
             .footer {
+
                 bottom: 18px;
+
                 font-size: 8px;
             }
         }
 
-        /* Very small phones */
+
+        /* =================================
+           SMALL PHONES
+        ================================= */
+
         @media (max-width: 360px) {
 
+            .maintenance {
+
+                padding-left: 18px;
+
+                padding-right: 18px;
+            }
+
+
             .logo {
+
                 margin-bottom: 42px;
             }
 
+
+            .brand-logo {
+
+                width: 120px;
+
+                max-width: 46vw;
+            }
+
+
             h1 {
+
                 font-size: 40px;
             }
 
+
             .description {
+
                 font-size: 12px;
+
+                line-height: 1.7;
+            }
+
+
+            .status {
+
+                font-size: 8px;
+
+                padding:
+                    9px
+                    13px;
+            }
+
+
+            .footer {
+
+                font-size: 7px;
             }
         }
 
-        /* Respect reduced motion preferences */
+
+        /* =================================
+           REDUCED MOTION
+        ================================= */
+
         @media (prefers-reduced-motion: reduce) {
+
             .status-dot {
+
                 animation: none;
             }
         }
+
     </style>
 </head>
 
+
 <body>
+
+
+    <!-- =================================
+         MAINTENANCE PAGE
+    ================================= -->
 
     <main class="maintenance">
 
+
         <div class="content">
 
-            <!-- AB COLLECTION LOGO -->
+
+            <!-- ============================
+                 AB COLLECTION LOGO
+            ============================= -->
+
             <div class="logo">
+
                 <img
-                    src="/ABlogo.png"
+                    src="/ABogo.png"
                     alt="AB Collection"
+                    class="brand-logo"
                 >
+
             </div>
 
-            <!-- Eyebrow -->
+
+            <!-- ============================
+                 EYEBROW
+            ============================= -->
+
             <div class="eyebrow">
+
                 Website Maintenance
+
             </div>
 
-            <!-- Main Message -->
+
+            <!-- ============================
+                 MAIN MESSAGE
+            ============================= -->
+
             <h1>
+
                 Something new
-                <span>is coming.</span>
+
+                <span>
+                    is coming.
+                </span>
+
             </h1>
 
-            <!-- Description -->
+
+            <!-- ============================
+                 DESCRIPTION
+            ============================= -->
+
             <p class="description">
-                We're putting the finishing touches on the AB Collection
-                experience. Our store is temporarily offline while we prepare
-                something better for you.
+
+                We're putting the finishing touches
+                on the AB Collection experience.
+
+                Our store is temporarily offline
+                while we prepare something better
+                for you.
+
             </p>
+
+
+            <!-- ============================
+                 DIVIDER
+            ============================= -->
 
             <div class="divider"></div>
 
-            <!-- Status -->
+
+            <!-- ============================
+                 STATUS
+            ============================= -->
+
             <div class="status">
+
                 <span class="status-dot"></span>
+
                 We'll be back very soon
+
             </div>
 
+
         </div>
 
-        <!-- Footer -->
+
+        <!-- ================================
+             FOOTER
+        ================================= -->
+
         <div class="footer">
-            AB Collection <span>•</span> Comfort Everyday
+
+            AB Collection
+
+            <span>•</span>
+
+            Comfort Everyday
+
         </div>
+
 
     </main>
+
 
 </body>
 </html>
