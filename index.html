@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AB Collection — We'll Be Back Soon</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        :root {
+            --black: #0B0B0B;
+            --charcoal: #171717;
+            --ivory: #F5F1E8;
+            --cream: #FAF8F3;
+            --champagne: #C8B58A;
+            --muted: #9A958B;
+            --border: rgba(200, 181, 138, 0.25);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: var(--black);
+            color: var(--ivory);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Subtle background texture */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+
+            background:
+                radial-gradient(
+                    circle at 50% 45%,
+                    rgba(200, 181, 138, 0.07),
+                    transparent 32%
+                );
+
+            z-index: 0;
+        }
+
+        /* Main layout */
+        .maintenance {
+            position: relative;
+            z-index: 1;
+
+            width: 100%;
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 32px 22px;
+        }
+
+        .content {
+            width: 100%;
+            max-width: 620px;
+            text-align: center;
+        }
+
+        /* Logo */
+        .logo {
+            margin-bottom: 70px;
+        }
+
+        .logo img {
+            width: 155px;
+            max-width: 55vw;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            object-fit: contain;
+        }
+
+        /*
+            If your logo is white and transparent,
+            this works directly.
+
+            If your logo file is dark,
+            remove the filter below.
+        */
+        .logo img {
+            filter: brightness(0) invert(1);
+        }
+
+        /* Small label */
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            color: var(--champagne);
+
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+
+            margin-bottom: 24px;
+        }
+
+        .eyebrow::before,
+        .eyebrow::after {
+            content: "";
+            width: 24px;
+            height: 1px;
+            background: var(--champagne);
+            opacity: 0.65;
+        }
+
+        /* Main heading */
+        h1 {
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(42px, 8vw, 72px);
+            line-height: 1.05;
+            font-weight: 500;
+            letter-spacing: -0.025em;
+
+            color: var(--cream);
+
+            margin-bottom: 24px;
+        }
+
+        h1 span {
+            display: block;
+            color: var(--champagne);
+        }
+
+        /* Description */
+        .description {
+            max-width: 500px;
+            margin: 0 auto;
+
+            color: var(--muted);
+
+            font-size: 14px;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+        /* Divider */
+        .divider {
+            width: 56px;
+            height: 1px;
+
+            background: var(--champagne);
+
+            opacity: 0.6;
+
+            margin: 38px auto;
+        }
+
+        /* Status */
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            padding: 11px 18px;
+
+            border: 1px solid var(--border);
+            border-radius: 100px;
+
+            background: rgba(255, 255, 255, 0.025);
+
+            color: #BDB8AD;
+
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+
+            background: var(--champagne);
+            border-radius: 50%;
+
+            box-shadow: 0 0 0 4px rgba(200, 181, 138, 0.08);
+
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.45;
+                transform: scale(0.85);
+            }
+        }
+
+        /* Footer */
+        .footer {
+            position: absolute;
+
+            bottom: 26px;
+            left: 0;
+            right: 0;
+
+            text-align: center;
+
+            color: #66635D;
+
+            font-size: 9px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .footer span {
+            color: var(--champagne);
+            opacity: 0.7;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+
+            .maintenance {
+                padding: 28px 20px 70px;
+            }
+
+            .logo {
+                margin-bottom: 55px;
+            }
+
+            .logo img {
+                width: 135px;
+            }
+
+            .eyebrow {
+                font-size: 9px;
+                letter-spacing: 0.2em;
+            }
+
+            .eyebrow::before,
+            .eyebrow::after {
+                width: 16px;
+            }
+
+            h1 {
+                font-size: clamp(42px, 12vw, 58px);
+                margin-bottom: 20px;
+            }
+
+            .description {
+                font-size: 13px;
+                line-height: 1.75;
+                max-width: 330px;
+            }
+
+            .divider {
+                margin: 30px auto;
+            }
+
+            .status {
+                font-size: 9px;
+                padding: 10px 15px;
+            }
+
+            .footer {
+                bottom: 18px;
+                font-size: 8px;
+            }
+        }
+
+        /* Very small phones */
+        @media (max-width: 360px) {
+
+            .logo {
+                margin-bottom: 42px;
+            }
+
+            h1 {
+                font-size: 40px;
+            }
+
+            .description {
+                font-size: 12px;
+            }
+        }
+
+        /* Respect reduced motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+            .status-dot {
+                animation: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="maintenance">
+
+        <div class="content">
+
+            <!-- AB COLLECTION LOGO -->
+            <div class="logo">
+                <img
+                    src="/logo.png"
+                    alt="AB Collection"
+                >
+            </div>
+
+            <!-- Eyebrow -->
+            <div class="eyebrow">
+                Website Maintenance
+            </div>
+
+            <!-- Main Message -->
+            <h1>
+                Something new
+                <span>is coming.</span>
+            </h1>
+
+            <!-- Description -->
+            <p class="description">
+                We're putting the finishing touches on the AB Collection
+                experience. Our store is temporarily offline while we prepare
+                something better for you.
+            </p>
+
+            <div class="divider"></div>
+
+            <!-- Status -->
+            <div class="status">
+                <span class="status-dot"></span>
+                We'll be back very soon
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            AB Collection <span>•</span> Comfort Everyday
+        </div>
+
+    </main>
+
+</body>
+</html>
